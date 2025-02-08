@@ -3,15 +3,14 @@ package gin_logger
 import (
 	"context"
 	"fmt"
+	"github.com/INT-Game/go-tools/slog/log_context"
+	"github.com/INT-Game/go-tools/slog/loggers"
 	"net"
 	"net/http"
 	"net/http/httputil"
 	"os"
 	"strings"
 	"time"
-
-	"slog/log_context"
-	"slog/loggers"
 
 	"github.com/gin-gonic/gin"
 	"go.uber.org/zap"

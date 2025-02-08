@@ -2,8 +2,8 @@ package gin_logger
 
 import (
 	"context"
+	"github.com/INT-Game/go-tools/slog/log_context"
 	"net/http/httptest"
-	"slog/log_context"
 	"testing"
 
 	"github.com/gin-gonic/gin"

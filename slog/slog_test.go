@@ -2,9 +2,9 @@ package slog
 
 import (
 	"context"
+	"github.com/INT-Game/go-tools/slog/log_context"
 	"os"
 	"path"
-	"slog/log_context"
 	"strings"
 	"testing"
 	"time"

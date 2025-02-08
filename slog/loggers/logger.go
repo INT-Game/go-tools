@@ -3,8 +3,8 @@ package loggers
 import (
 	"context"
 	"fmt"
+	"github.com/INT-Game/go-tools/slog/log_context"
 	"os"
-	"slog/log_context"
 
 	"go.uber.org/zap"
 	"go.uber.org/zap/zapcore"
