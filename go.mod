@@ -8,7 +8,7 @@ require (
 	github.com/google/uuid v1.4.0
 	github.com/spf13/viper v1.19.0
 	github.com/stretchr/testify v1.9.0
-	github.com/xuri/excelize/v2 v2.9.0
+	github.com/xuri/excelize/v2 v2.8.0
 	go.uber.org/zap v1.27.0
 	golang.org/x/text v0.22.0
 	gopkg.in/natefinch/lumberjack.v2 v2.2.1
