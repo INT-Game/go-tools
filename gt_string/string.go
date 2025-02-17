@@ -22,8 +22,12 @@ func ConvertToString(i interface{}) string {
 		return v
 	case []byte:
 		return string(v)
-	case int, int32, int64:
-		return fmt.Sprintf("%d", v)
+	case int:
+		return strconv.Itoa(v)
+	case int32:
+		return strconv.FormatInt(int64(v), 10)
+	case int64:
+		return strconv.FormatInt(v, 10)
 	case float32, float64:
 		return fmt.Sprintf("%f", v)
 	case bool:
