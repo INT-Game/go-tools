@@ -133,4 +133,6 @@ func GetContextLogger(ctx context.Context) *zap.SugaredLogger {
 	return Logger
 }
 
+type SLogger = loggers.SLogger
+
 var NewSLogger = loggers.NewSLogger
