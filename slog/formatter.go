@@ -50,7 +50,7 @@ func GetConsoleEncoder(hostname string) zapcore.Encoder {
 		StacktraceKey:    "st",
 		LineEnding:       zapcore.DefaultLineEnding,
 		EncodeLevel:      levelEncoderWithHostname,
-		EncodeTime:       zapcore.RFC3339TimeEncoder,
+		EncodeTime:       zapcore.ISO8601TimeEncoder,
 		EncodeDuration:   zapcore.SecondsDurationEncoder,
 		EncodeCaller:     CallerEncoder,
 		EncodeName:       NameEncoder,
