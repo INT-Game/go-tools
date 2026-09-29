@@ -10,7 +10,20 @@ import (
 	"time"
 
 	"github.com/stretchr/testify/assert"
+	"go.uber.org/zap/zapcore"
 )
+
+func TestInitRespectsLevel(t *testing.T) {
+	for _, minLevel := range []int{-1, 0, 1, 2} {
+		Init(LogConfig{Dir: t.TempDir(), File: true, Level: minLevel})
+		for _, level := range []zapcore.Level{zapcore.DebugLevel, zapcore.InfoLevel, zapcore.WarnLevel, zapcore.ErrorLevel} {
+			if got := ZapLogger.Core().Enabled(level); got != (int(level) >= minLevel) {
+				t.Errorf("configured level=%d, log level=%d: enabled=%v", minLevel, level, got)
+			}
+		}
+		Close()
+	}
+}
 
 func TestInitSlog(t *testing.T) {
 	logDir := "./tmp/test_slog"

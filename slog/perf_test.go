@@ -3,9 +3,9 @@ package slog
 import (
 	"context"
 	"fmt"
+	"github.com/INT-Game/go-tools/slog/loggers"
+	"github.com/INT-Game/go-tools/slog/perf"
 	"os"
-	"slog/loggers"
-	"slog/perf"
 	"strconv"
 	"sync"
 	"testing"

@@ -22,14 +22,15 @@ var fileErrorSyncer zapcore.WriteSyncer
 
 func Init(config LogConfig) {
 	// Config stderr and stdout files
+	minLevel := zapcore.Level(config.Level)
 	priorityDebug := zap.LevelEnablerFunc(func(lvl zapcore.Level) bool {
-		return lvl <= zapcore.DebugLevel
+		return lvl >= minLevel && lvl <= zapcore.DebugLevel
 	})
 	priorityOutput := zap.LevelEnablerFunc(func(lvl zapcore.Level) bool {
-		return zapcore.DebugLevel < lvl && lvl < zapcore.ErrorLevel
+		return lvl >= minLevel && zapcore.DebugLevel < lvl && lvl < zapcore.ErrorLevel
 	})
 	priorityError := zap.LevelEnablerFunc(func(lvl zapcore.Level) bool {
-		return lvl >= zapcore.ErrorLevel
+		return lvl >= minLevel && lvl >= zapcore.ErrorLevel
 	})
 
 	// High-priority output should also go to standard error, and low-priority
